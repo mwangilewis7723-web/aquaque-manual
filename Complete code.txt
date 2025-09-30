@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Treatment Plant - AQUA-QUE</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #00acc1;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .component-card, .guideline-card {
+      transition: all 0.3s ease;
+    }
+    .component-card:hover, .guideline-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+                  0 4px 6px -2px rgba(0,0,0,0.05);
+    }
+    .do-card { border-left: 4px solid #10b981; }
+    .dont-card { border-left: 4px solid #ef4444; }
+  </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+  <!-- Header -->
+  <header id="home" class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold">Water Treatment Plant</h1>
+      <p class="text-xl mt-3">Operation Manual - AQUA-QUE</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-10">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8 py-4">
+        <a href="#home" class="nav-link text-gray-800 font-medium px-3 py-2 rounded-md">Home</a>
+        <a href="#components" class="nav-link text-gray-800 font-medium px-3 py-2 rounded-md">Components</a>
+        <a href="#procedures" class="nav-link text-gray-800 font-medium px-3 py-2 rounded-md">Procedures</a>
+        <a href="#guidelines" class="nav-link text-gray-800 font-medium px-3 py-2 rounded-md">Guidelines</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-12 space-y-20">
+
+    <!-- Components Section -->
+    <section id="components" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-cyan-500 pb-2">System Components</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        The water treatment system consists of several key components, each serving a specific purpose in the purification process.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Sand Filter -->
+        <div class="component-card bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+              <i data-feather="filter" class="text-cyan-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Sand Filter</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Removes visible dirt, sand, rust, and suspended solids.</p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Multi-port valve</li>
+            <li>Backwash capability</li>
+            <li>First line of defense</li>
+          </ul>
+        </div>
+
+        <!-- Water Softener -->
+        <div class="component-card bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+              <i data-feather="droplet" class="text-cyan-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Water Softener</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Removes calcium and magnesium to prevent scale buildup.</p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Ion exchange resin bed</li>
+            <li>Periodic regeneration</li>
+            <li>Connected to brine tank</li>
+          </ul>
+        </div>
+
+        <!-- Brine Tank -->
+        <div class="component-card bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+              <i data-feather="box" class="text-cyan-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Brine Tank</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Holds salt solution for softener regeneration.</p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Salt pellets or blocks</li>
+            <li>Automatic regeneration</li>
+            <li>Regular salt refill</li>
+          </ul>
+        </div>
+
+        <!-- RO Unit -->
+        <div class="component-card bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center mb-4">
+            <div class="bg-cyan-100 p-3 rounded-full mr-4">
+              <i data-feather="cpu" class="text-cyan-600"></i>
+            </div>
+            <h3 class="text-xl font-semibold">RO Unit</h3>
+          </div>
+          <p class="text-gray-600 mb-4">Purifies water using a semi-permeable membrane.</p>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>High-pressure pump</li>
+            <li>Semi-permeable membrane</li>
+            <li>Produces reject water</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Procedures Section -->
+    <section id="procedures" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-cyan-500 pb-2">Procedures</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        This section outlines the daily and periodic operation steps of the water treatment plant.
+      </p>
+      <!-- You can expand here with your detailed steps -->
+    </section>
+
+    <!-- Guidelines Section -->
+    <section id="guidelines" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-cyan-500 pb-2">Dos and Don’ts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Do -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-green-600 flex items-center">
+            <i data-feather="check-circle" class="mr-2"></i> Do
+          </h3>
+          <div class="space-y-4">
+            <div class="do-card guideline-card bg-white p-5 rounded-lg shadow-sm">
+              <p class="text-gray-700">Always open the yellow valve before powering on.</p>
+            </div>
+            <div class="do-card guideline-card bg-white p-5 rounded-lg shadow-sm">
+              <p class="text-gray-700">Smell purified water for chlorine levels, report strong scent.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Don’t -->
+        <div>
+          <h3 class="text-xl font-semibold mb-4 text-red-600 flex items-center">
+            <i data-feather="x-circle" class="mr-2"></i> Don’t
+          </h3>
+          <div class="space-y-4">
+            <div class="dont-card guideline-card bg-white p-5 rounded-lg shadow-sm">
+              <p class="text-gray-700">Never switch HP pump on during BACKWASH.</p>
+            </div>
+            <div class="dont-card guideline-card bg-white p-5 rounded-lg shadow-sm">
+              <p class="text-gray-700">Do not leave the machine running unattended.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-cyan-500 pb-2">Emergency Contacts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold">Company CEO</h3>
+          <p class="text-gray-600">Lucy Kinyanjui</p>
+          <p class="text-blue-600 font-medium">+254722440747</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold">Maintenance</h3>
+          <p class="text-gray-600">Team</p>
+          <p class="text-purple-600 font-medium">+254117526678</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-lg font-semibold">Emergency</h3>
+          <p class="text-gray-600">Lewis Mwangi</p>
+          <p class="text-red-600 font-medium">+254740311039</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-xl font-bold">AQUA-QUE</h3>
+      <p class="text-gray-400">Operation Manual</p>
+      <p class="mt-4 text-gray-400 text-sm">© 2024 AQUA-QUE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Init Scripts -->
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    feather.replace();
+  </script>
+</body>
+</html>
